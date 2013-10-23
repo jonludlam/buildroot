@@ -1,8 +1,6 @@
-%global debug_package %{nil}
-
 Name:           ocaml-xen-lowlevel-libs
-Version:        0.9.9
-Release:        2
+Version:        0.9.10
+Release:        3
 Summary:        Xen hypercall bindings for OCaml
 License:        LGPL
 Group:          Development/Other
@@ -30,6 +28,8 @@ developing applications that use %{name}.
 %setup -q
 
 %build
+make configure
+./configure --disable-xenctrl
 make
 
 %install
@@ -49,16 +49,16 @@ rm -rf %{buildroot}
 %files devel
 %defattr(-,root,root)
 %doc README.md
-%{_libdir}/ocaml/xenctrl/*
-#%{_libdir}/ocaml/xenlight/*
-#%{_libdir}/ocaml/stublibs/dllxenctrl_stubs.so
-#%{_libdir}/ocaml/stublibs/dllxenctrl_stubs.so.owner
-#%{_libdir}/ocaml/stublibs/dllxenlight_stubs.so
-#%{_libdir}/ocaml/stublibs/dllxenlight_stubs.so.owner
-#%{_libdir}/ocaml/stublibs/dllxentoollog_stubs.so
-#%{_libdir}/ocaml/stublibs/dllxentoollog_stubs.so.owner
+%{_libdir}/ocaml/xenlight/*
+%{_libdir}/ocaml/stublibs/dllxenlight_stubs.so
+%{_libdir}/ocaml/stublibs/dllxenlight_stubs.so.owner
+%{_libdir}/ocaml/stublibs/dllxentoollog_stubs.so
+%{_libdir}/ocaml/stublibs/dllxentoollog_stubs.so.owner
 
 %changelog
+* Mon Oct 21 2013 Jon Ludlam <jonathan.ludlam@eu.citrix.com>
+- Reinstate xenlight, remove xenctrl
+
 * Sun Oct 20 2013 David Scott <dave.scott@eu.citrix.com>
 - Remove xenlight because this old version isn't enough for xenopsd-xenlight
 

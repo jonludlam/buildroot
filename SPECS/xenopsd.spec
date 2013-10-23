@@ -1,11 +1,11 @@
 Name:           xenopsd
-Version:        0.9.30
+Version:        0.9.30.2
 Release:        1
 Summary:        Simple VM manager
 License:        LGPL
 Group:          Development/Other
 URL:            https://github.com/xapi-project/xenopsd/archive/%{version}.tar.gz
-Source0:        https://github.com/xapi-project/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
+Source0:        https://github.com/jonludlam/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
 Source1:        xenopsd-xc-init
 Source2:        xenopsd-simulator-init
 Source3:        xenopsd-libvirt-init
@@ -83,7 +83,7 @@ install -D _build/simulator/xenops_simulator_main.native %{buildroot}/%{_sbindir
 install -D _build/xc/xenops_xc_main.native               %{buildroot}/%{_sbindir}/xenopsd-xc
 #install -D _build/xl/xenops_xl_main.native               %{buildroot}/%{_sbindir}/xenopsd-xenlight
 mkdir -p %{buildroot}/%{_libdir}/%{name}
-install -D _build/xenguest/xenguest_main.native          %{buildroot}/%{_libdir}/%{name}/xenguest
+#install -D _build/xenguest/xenguest_main.native          %{buildroot}/%{_libdir}/%{name}/xenguest
 install -D scripts/vif %{buildroot}/%{_libdir}/%{name}/vif
 install -D scripts/vif-real %{buildroot}/%{_libdir}/%{name}/vif-real
 install -D scripts/vif-xl %{buildroot}/%{_libdir}/%{name}/vif-xl
@@ -142,7 +142,7 @@ fi
 %defattr(-,root,root)
 %{_sbindir}/xenopsd-xc
 %{_sysconfdir}/init.d/xenopsd-xc
-%{_libdir}/%{name}/xenguest
+#%{_libdir}/%{name}/xenguest
 
 %post xc
 /sbin/chkconfig --add xenopsd-xc

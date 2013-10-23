@@ -1,0 +1,22 @@
+diff --git a/rrdd/rrdd_main.ml b/rrdd/rrdd_main.ml
+index 7261d92..29dcbf2 100644
+--- a/rrdd/rrdd_main.ml
++++ b/rrdd/rrdd_main.ml
+@@ -202,7 +202,7 @@ let update_vcpus xc doms =
+ 		(* Runstate info is per-domain rather than per-vcpu *)
+ 		let dss =
+ 			try
+-				let ri = Xenctrl.domain_get_runstate_info xc domid in
++				failwith "unimplementrd" (*let ri = Xenctrl.domain_get_runstate_info xc domid in
+ 				(VM uuid, ds_make ~name:"runstate_fullrun" ~units:"(fraction)"
+ 					~value:(Rrd.VT_Float ((Int64.to_float ri.Xenctrl.time0) /. 1.0e9))
+ 					~description:"Fraction of time that all VCPUs are running"
+@@ -226,7 +226,7 @@ let update_vcpus xc doms =
+ 				(VM uuid, ds_make ~name:"runstate_partial_contention" ~units:"(fraction)"
+ 					~value:(Rrd.VT_Float ((Int64.to_float ri.Xenctrl.time5) /. 1.0e9))
+ 					~description:"Fraction of time that some VCPUs are runnable and some are blocked"
+-					~ty:Rrd.Derive ~default:false ~min:0.0 ())::dss
++					~ty:Rrd.Derive ~default:false ~min:0.0 ())::dss*)
+ 			with e ->
+ 				dss
+ 		in
