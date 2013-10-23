@@ -7,6 +7,7 @@ Group:          Development/Other
 URL:            https://github.com/xapi-project/xcp-rrdd/archive/%{version}.tar.gz
 Source0:        https://github.com/xapi-project/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
 Source1:        xcp-rrdd-init
+Patch0:		rrdd-no-runstate-info
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 BuildRequires:  ocaml ocaml-obuild ocaml-findlib ocaml-camlp4-devel
 BuildRequires:  ocaml-xcp-idl-devel ocaml-rpc-devel
@@ -23,6 +24,7 @@ Statistics gathering daemon for the xapi toolstack.
 
 %prep
 %setup -q
+%patch0 -p1 
 cp %{SOURCE1} xcp-rrdd-init
 
 %build

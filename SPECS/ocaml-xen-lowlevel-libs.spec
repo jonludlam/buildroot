@@ -1,7 +1,5 @@
-%global debug_package %{nil}
-
 Name:           ocaml-xen-lowlevel-libs
-Version:        0.9.9
+Version:        0.9.10
 Release:        3
 Summary:        Xen hypercall bindings for OCaml
 License:        LGPL
@@ -30,6 +28,8 @@ developing applications that use %{name}.
 %setup -q
 
 %build
+make configure
+./configure --disable-xenctrl
 make
 
 %install
@@ -49,41 +49,15 @@ rm -rf %{buildroot}
 %files devel
 %defattr(-,root,root)
 %doc README.md
-%{_libdir}/ocaml/xenctrl/*
-#%{_libdir}/ocaml/xenlight/*
-%{_libdir}/ocaml/stublibs/dllxenctrl_stubs.so
-%{_libdir}/ocaml/stublibs/dllxenctrl_stubs.so.owner
-#%{_libdir}/ocaml/stublibs/dllxenlight_stubs.so
-#%{_libdir}/ocaml/stublibs/dllxenlight_stubs.so.owner
-#%{_libdir}/ocaml/stublibs/dllxentoollog_stubs.so
-#%{_libdir}/ocaml/stublibs/dllxentoollog_stubs.so.owner
-
-%exclude %{_libdir}/ocaml/stublibs/dllxenlight_stubs.so
-%exclude %{_libdir}/ocaml/stublibs/dllxenlight_stubs.so.owner
-%exclude %{_libdir}/ocaml/stublibs/dllxentoollog_stubs.so
-%exclude %{_libdir}/ocaml/stublibs/dllxentoollog_stubs.so.owner
-%exclude %{_libdir}/ocaml/xenlight/META
-%exclude %{_libdir}/ocaml/xenlight/libxenlight_stubs.a
-%exclude %{_libdir}/ocaml/xenlight/libxentoollog_stubs.a
-%exclude %{_libdir}/ocaml/xenlight/xenlight.a
-%exclude %{_libdir}/ocaml/xenlight/xenlight.cma
-%exclude %{_libdir}/ocaml/xenlight/xenlight.cmi
-%exclude %{_libdir}/ocaml/xenlight/xenlight.cmx
-%exclude %{_libdir}/ocaml/xenlight/xenlight.cmxa
-%exclude %{_libdir}/ocaml/xenlight/xenlight.cmxs
-%exclude %{_libdir}/ocaml/xenlight/xenlight.mli
-%exclude %{_libdir}/ocaml/xenlight/xentoollog.a
-%exclude %{_libdir}/ocaml/xenlight/xentoollog.cma
-%exclude %{_libdir}/ocaml/xenlight/xentoollog.cmi
-%exclude %{_libdir}/ocaml/xenlight/xentoollog.cmx
-%exclude %{_libdir}/ocaml/xenlight/xentoollog.cmxa
-%exclude %{_libdir}/ocaml/xenlight/xentoollog.cmxs
-%exclude %{_libdir}/ocaml/xenlight/xentoollog.mli
-
+%{_libdir}/ocaml/xenlight/*
+%{_libdir}/ocaml/stublibs/dllxenlight_stubs.so
+%{_libdir}/ocaml/stublibs/dllxenlight_stubs.so.owner
+%{_libdir}/ocaml/stublibs/dllxentoollog_stubs.so
+%{_libdir}/ocaml/stublibs/dllxentoollog_stubs.so.owner
 
 %changelog
-* Mon Oct 21 2013 David Scott <dave.scott@eu.citrix.com>
-- Exclude the xenlight stuff in case it manages to build
+* Mon Oct 21 2013 Jon Ludlam <jonathan.ludlam@eu.citrix.com>
+- Reinstate xenlight, remove xenctrl
 
 * Sun Oct 20 2013 David Scott <dave.scott@eu.citrix.com>
 - Remove xenlight because this old version isn't enough for xenopsd-xenlight
