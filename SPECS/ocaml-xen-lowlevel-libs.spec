@@ -59,6 +59,9 @@ rm -rf %{buildroot}
 * Mon Oct 21 2013 Jon Ludlam <jonathan.ludlam@eu.citrix.com>
 - Reinstate xenlight, remove xenctrl
 
+* Mon Oct 21 2013 David Scott <dave.scott@eu.citrix.com>
+- Exclude the xenlight stuff in case it manages to build
+
 * Sun Oct 20 2013 David Scott <dave.scott@eu.citrix.com>
 - Remove xenlight because this old version isn't enough for xenopsd-xenlight
 
