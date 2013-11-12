@@ -234,10 +234,9 @@ def build_rpm_from_srpm(spec):
         else:
             print '\t@echo [COWBUILDER] $@'
             print '\tsudo cowbuilder --build '\
-                '--configfile pbuilder/pbuilderrc-raring-amd64 '\
+                '--configfile pbuilder/pbuilderrc-saucy-amd64 '\
                 '--buildresult %s $<' % rpm_outdir 
-
-
+        
 def flatten(lst):
     res = []
     for elt in lst:

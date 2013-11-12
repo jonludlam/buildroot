@@ -55,12 +55,12 @@ Requires:       %{name} = %{version}-%{release}
 %description    simulator
 A synthetic VM manager for testing.
 
-#%package        xenlight
-#Summary:        %{name} using libxenlight
-#Group:          Development/Other
-#Requires:       %{name} = %{version}-%{release}
-#%description    xenlight
-#Simple VM manager for Xen using libxenlight
+%package        xenlight
+Summary:        %{name} using libxenlight
+Group:          Development/Other
+Requires:       %{name} = %{version}-%{release}
+%description    xenlight
+Simple VM manager for Xen using libxenlight
 
 %prep
 %setup -q

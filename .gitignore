@@ -10,3 +10,4 @@
 *.swp
 SOURCES/*.tar.gz
 SOURCES/*.tbz
+SOURCES/*.tar.bz2

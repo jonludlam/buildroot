@@ -6,6 +6,7 @@ Group:   System/Hypervisor
 License: LGPL+linking exception
 URL:  https://github.com/djs55/blktap
 Source0: https://github.com/djs55/blktap/archive/%{version}/blktap-%{version}.tar.gz
+Patch0: tapdisk-fix-compilation
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 BuildRequires: autoconf automake libtool libaio-devel xen-devel libuuid-devel
 
@@ -14,7 +15,7 @@ Enhanced version of tapdisk with support for storage mirroring.
 
 %prep 
 %setup -q
-
+%patch0
 
 %build
 sh autogen.sh
