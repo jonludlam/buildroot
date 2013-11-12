@@ -1,12 +1,12 @@
 %define debug_package %{nil}
 
 Name:           biniou
-Version:        1.0.6
-Release:        1
+Version:        1.0.8
+Release:        2
 Summary:        Binary data format designed for speed, safety, ease of use and backward compatibility as protocols evolve
 License:        BSD3
 Group:          Development/Other
-URL:            http://mjambon.com/releases/biniou/biniou-1.0.6.tar.gz
+URL:            http://mjambon.com/releases/biniou/biniou-1.0.8.tar.gz
 Source0:        http://mjambon.com/releases/%{name}/%{name}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 BuildRequires:  ocaml ocaml-findlib easy-format

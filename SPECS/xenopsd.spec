@@ -5,7 +5,7 @@ Summary:        Simple VM manager
 License:        LGPL
 Group:          Development/Other
 URL:            https://github.com/xapi-project/xenopsd/archive/%{version}.tar.gz
-Source0:        https://github.com/djs55/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
+Source0:        https://github.com/xapi-project/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
 Source1:        xenopsd-xc-init
 Source2:        xenopsd-simulator-init
 Source3:        xenopsd-libvirt-init
@@ -55,12 +55,12 @@ Requires:       %{name} = %{version}-%{release}
 %description    simulator
 A synthetic VM manager for testing.
 
-#%package        xenlight
-#Summary:        %{name} using libxenlight
-#Group:          Development/Other
-#Requires:       %{name} = %{version}-%{release}
-#%description    xenlight
-#Simple VM manager for Xen using libxenlight
+%package        xenlight
+Summary:        %{name} using libxenlight
+Group:          Development/Other
+Requires:       %{name} = %{version}-%{release}
+%description    xenlight
+Simple VM manager for Xen using libxenlight
 
 %prep
 %setup -q

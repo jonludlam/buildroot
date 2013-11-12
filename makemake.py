@@ -246,8 +246,8 @@ for specname, spec in specs.iteritems():
         else:
             print '\t@echo [COWBUILDER] $@'
             print '\tsudo cowbuilder --build '\
-                '--configfile pbuilder/pbuilderrc-raring-amd64 '\
-                '--buildresult %s $<' % rpm_outdir 
+		'--configfile pbuilder/pbuilderrc-saucy-amd64 '\
+		'--buildresult %s $<' % rpm_outdir 
         
 # RPM build dependencies.   The 'requires' key for the *source* RPM is
 # actually the 'buildrequires' key from the spec

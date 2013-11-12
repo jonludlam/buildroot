@@ -1,0 +1,43 @@
+commit cfbc2cba92ad407502ee89c3cecde37f97a242fa
+Author: Jon Ludlam <jonathan.ludlam@eu.citrix.com>
+Date:   Mon Nov 4 10:12:14 2013 +0000
+
+    Fix compile errors on Ubuntu 13.10 (gcc 4.8.1-10ubuntu8)
+
+    Signed-off-by: Jon Ludlam <jonathan.ludlam@eu.citrix.com>
+
+diff --git a/drivers/block-llcache.c b/drivers/block-llcache.c
+index 604ce1a..fb17c98 100644
+--- a/drivers/block-llcache.c
++++ b/drivers/block-llcache.c
+@@ -242,7 +242,7 @@ struct llpcache {
+ 		return;
+ 	}
+ 
+-	memset(req, 0, sizeof(req));
++	memset(req, 0, sizeof(td_llpcache_req_t));
+ 
+ 	req->treq     = treq;
+ 
+@@ -542,7 +542,7 @@ struct llecache {
+ 		return;
+ 	}
+ 
+-	memset(req, 0, sizeof(req));
++	memset(req, 0, sizeof(td_llecache_req_t));
+ 
+ 	req->treq       = treq;
+ 	req->pending    = treq.secs;
+diff --git a/drivers/tapdisk-logfile.c b/drivers/tapdisk-logfile.c
+index ef6cead..517e1a0 100644
+--- a/drivers/tapdisk-logfile.c
++++ b/drivers/tapdisk-logfile.c
+@@ -152,7 +152,7 @@
+ {
+ 	int err;
+ 
+-	memset(log, 0, sizeof(log));
++	memset(log, 0, sizeof(td_logfile_t));
+ 
+ 	tapdisk_logfile_name(log->path, sizeof(log->path), dir, ident, ext);
+ 
