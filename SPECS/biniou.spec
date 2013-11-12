@@ -1,8 +1,8 @@
 %define debug_package %{nil}
 
 Name:           biniou
-Version:        1.0.6
-Release:        1
+Version:        1.0.8
+Release:        2
 Summary:        Binary data format designed for speed, safety, ease of use and backward compatibility as protocols evolve
 License:        BSD3
 Group:          Development/Other

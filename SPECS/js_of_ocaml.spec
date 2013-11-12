@@ -2,7 +2,7 @@
 
 Name:           js_of_ocaml
 Version:        1.3.2
-Release:        1
+Release:        3
 Summary:        Compile OCaml programs to javascript
 License:        LGPL and others
 Group:          Development/Other
@@ -54,6 +54,9 @@ rm -rf %{buildroot}
 %{_bindir}/js_of_ocaml
 
 %changelog
+* Sun Nov 3 2013 Jon Ludlam <jonathan.ludlam@eu.citrix.com>
+- Bump release to override the version in Saucy
+
 * Sun Jun  2 2013 David Scott <dave.scott@eu.citrix.com>
 - Initial package
 
