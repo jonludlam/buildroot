@@ -1,8 +1,8 @@
 %global debug_package %{nil}
 
 Name:           ocaml-xenops
-Version:        0.9.4
-Release:        2%{?dist}
+Version:        0.9.5
+Release:        1%{?dist}
 Summary:        Low-level xen control operations OCaml
 License:        LGPL
 URL:            https://github.com/xapi-project/xenops
@@ -73,6 +73,9 @@ make install BINDIR=%{buildroot}/%{_bindir}
 %{_bindir}/list_domains
 
 %changelog
+* Wed Jun 4 2014 Jon Ludlam <jonathan.ludlam@citrix.com> - 0.9.5-1
+- Update to 0.9.5
+
 * Mon Jun  2 2014 Euan Harris <euan.harris@citrix.com> - 0.9.4-2
 - Split files correctly between base and devel packages
 

@@ -1,12 +1,12 @@
 %global debug_package %{nil}
 
 Name:           ocaml-xcp-idl
-Version:        0.9.16
+Version:        0.9.17
 Release:        2%{?dist}
 Summary:        Common interface definitions for XCP services
 License:        LGPL
 URL:            https://github.com/xapi-project/xcp-idl
-Source0:        https://github.com/xapi-project/xcp-idl/archive/%{version}/xcp-idl-%{version}.tar.gz
+Source0:        https://github.com/xapi-project/xcp-idl/archive/v%{version}/xcp-idl-%{version}.tar.gz
 
 BuildRequires:  ocaml
 BuildRequires:  ocaml-camlp4-devel

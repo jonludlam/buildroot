@@ -1,5 +1,5 @@
 Name:           xcp-rrdd
-Version:        0.9.5
+Version:        0.9.6
 Release:        1%{?dist}
 Summary:        Statistics gathering daemon for the xapi toolstack
 License:        LGPL
@@ -54,6 +54,9 @@ if [ $1 -eq 0 ]; then
 fi
 
 %changelog
+* Wed Jun 4 2014 Jon Ludlam <jonathan.ludlam@citrix.com> - 0.9.6-1
+- Update to 0.9.6
+
 * Fri May  9 2014 David Scott <dave.scott@citrix.com> - 0.9.5-1
 - Update to 0.9.5, now will start without xen
 
