@@ -44,5 +44,5 @@ cp src/bash-completion %{buildroot}/etc/bash-completion.d/xe
 /etc/bash-completion.d/xe
 
 %changelog
-* Sat Apr 26 2014 David Scott <dave.scott@citrix.com> - 0.6.2-2
+* Sat Apr 26 2014 David Scott <dave.scott@citrix.com> - 0.6.2-1
 - Initial package
